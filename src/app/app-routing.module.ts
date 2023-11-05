@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
+import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { VistaRecetaComponent } from './pages/vista-receta/vista-receta.component';
 
 const routes: Routes = [
-  {path: "pages/nav-bar", component: NavBarComponent}
+  {path: "home", component: InicioComponent},
+  {path: "receta", component: VistaRecetaComponent},
+  {path: "**", redirectTo: 'home'}
 ];
 
 @NgModule({

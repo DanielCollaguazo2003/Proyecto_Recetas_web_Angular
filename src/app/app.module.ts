@@ -3,14 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
-import { MenuNavComponent } from './menu/menu-nav/menu-nav.component';
+import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
+import { MenuNavComponent } from './components/menu-nav/menu-nav.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
-import { RecetasComponentComponent } from './pages/recetas-component/recetas-component.component';
+import { RecetasComponentComponent } from './components/recetas-component/recetas-component.component';
 import { VistaRecetaComponent } from './pages/vista-receta/vista-receta.component';
-import { FormulacioRecetasComponent } from './pages/formulacio-recetas/formulacio-recetas.component';
-import { ContactanosComponent } from './pages/sobreNosotros/contactanos.component';
-import { FooterComponent } from './pages/footer/footer.component';
+import { FormulacioRecetasComponent } from './components/formulario/formulario.component';
+import { ContactanosComponent } from './components/sobre-nosotros/contactanos.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { CarruselComponent } from './components/carrusel/carrusel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './pages/footer/footer.component';
     VistaRecetaComponent,
     FormulacioRecetasComponent,
     ContactanosComponent,
-    FooterComponent
+    FooterComponent,
+    CarruselComponent
   ],
   imports: [
     BrowserModule,
@@ -32,3 +34,5 @@ import { FooterComponent } from './pages/footer/footer.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
