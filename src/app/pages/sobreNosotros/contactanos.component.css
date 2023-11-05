@@ -1,0 +1,35 @@
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Estilos para la sección "about" */
+.about {
+  text-align: right;
+  width: 50%;
+}
+
+
+/* Estilos para la imagen en "photo-about-us" */
+.photo-about-us {
+  flex: 1;
+  text-align: left;
+  padding: 20px;
+
+}
+
+.photo-about-us img{
+  width: 95%;
+}
+
+#about-title {
+  margin-left: 10px;
+  color: #ffe600;
+  font-weight: bold;
+  font-size: 2em;
+}

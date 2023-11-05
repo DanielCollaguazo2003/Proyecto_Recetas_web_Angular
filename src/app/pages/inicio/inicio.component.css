@@ -1,0 +1,63 @@
+.carrusel-container {
+  overflow: hidden;
+  height: 420px;
+  padding-top: 70px;
+
+}
+#id-fond1, #id-fond2, #id-fond3, #id-fond4{
+  background-image: url(/assets/img/cuy.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  text-align: center;
+  color: rgb(213, 241, 241);
+  width: 100%;
+  height: 420px;
+  margin-bottom: 25px;
+  padding-top: 70px;
+}
+
+#id-fond2{
+  background-image: url(/assets/img/fond-bandeja-paisa.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#id-fond3{
+  background-image: url(/assets/img/fond-mate.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#id-fond4{
+  background-image: url(/assets/img/fond-tortilla.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fond-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fond-container img {
+  margin: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.fond-text-container {
+  width: 400px;
+  margin: 30px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.377);
+  border-radius: 7px;
+  padding: 18px;
+}
