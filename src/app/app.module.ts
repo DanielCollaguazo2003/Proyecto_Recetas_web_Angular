@@ -12,6 +12,7 @@ import { FormulacioRecetasComponent } from './components/formulario/formulario.c
 import { ContactanosComponent } from './components/sobre-nosotros/contactanos.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
+import { CartaRecetaComponent } from './components/carta-receta/carta-receta.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
     FormulacioRecetasComponent,
     ContactanosComponent,
     FooterComponent,
-    CarruselComponent
+    CarruselComponent,
+    CartaRecetaComponent
   ],
   imports: [
     BrowserModule,
