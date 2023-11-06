@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Receta } from 'src/app/domain/receta';
 
 @Component({
   selector: 'app-carta-receta',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./carta-receta.component.css']
 })
 export class CartaRecetaComponent {
+  @Input() receta?: Receta;
 
 }

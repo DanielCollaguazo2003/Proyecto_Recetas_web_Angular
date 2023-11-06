@@ -6,7 +6,7 @@ import { VistaRecetaComponent } from './pages/vista-receta/vista-receta.componen
 
 const routes: Routes = [
   {path: "home", component: InicioComponent},
-  {path: "receta", component: VistaRecetaComponent},
+  {path: "receta/:id", component: VistaRecetaComponent},
   {path: "**", redirectTo: 'home'}
 ];
 

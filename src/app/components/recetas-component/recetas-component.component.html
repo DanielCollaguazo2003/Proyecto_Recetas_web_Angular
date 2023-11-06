@@ -2,5 +2,7 @@
   <h1 id="recipes-title">Recetas</h1>
 </div>
 <div class="recipes-container" id="food-container">
-
-  
+    <div class="carta" *ngFor="let receta of recetas">
+        <app-carta-receta [receta]="receta"></app-carta-receta>
+    </div>
+</div>

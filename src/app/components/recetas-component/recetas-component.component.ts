@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Receta } from 'src/app/domain/receta';
 
 @Component({
   selector: 'app-recetas-component',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./recetas-component.component.css']
 })
 export class RecetasComponentComponent {
+
+  @Input() recetas: Receta[] = [];
+
 
 }

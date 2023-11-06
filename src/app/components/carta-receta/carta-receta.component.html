@@ -1,8 +1,8 @@
 <div class="recipe">
-  <a href="">
-  <img src="" alt="$"/>
-      <h1></h1>
-      <p></p>
+  <a routerLink="/receta/{{receta?.identificador}}">
+  <img [src]="receta?.imagen" alt="$"/>
+      <h1>{{receta?.nombre}}</h1>
+      <p>{{receta?.tipo}}</p>
     </a>
 </div>
 
