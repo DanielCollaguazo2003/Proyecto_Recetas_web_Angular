@@ -1,11 +1,29 @@
-<div class="recipe-container">
-  <img src="" id="imagen">
+<ng-container *ngIf="receta; else tmpNoDataFound">
+  <div class="portada">
+    <img src="{{receta.imagen}}" id="{{receta.identificador}}">
+    <div>
+      <h1 id="title">{{receta.nombre}}</h1>
+    </div>
+  </div>
 
-  <h1 id="title"></h1>
+  <div class="ingredientes">
+    <h1 class="title">Ingredientes</h1>
+    <p id="descripcion" style="margin-bottom: 15px;">{{ receta.ingredientes }}</p>
+  </div>
 
-  <p id="descripcion" style="margin-bottom: 15px;"></p>
+  <div class="preparacion">
+    <h1 class="title">Preparación</h1>
+    <p id="pasos">{{ receta.preparacion }}</p>
+  </div>
+</ng-container>
 
-  <p id="pasos"></p>
-</div>
+<ng-template #tmpNoDataFound>
+  <h1>No se encontro la receta con el ID indicado</h1>
+</ng-template>
 
-<script src="/js/watch-recipes.js"></script>
+
+
+
+
+
+

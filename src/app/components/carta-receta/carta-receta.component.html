@@ -1,5 +1,5 @@
 <div class="recipe">
-  <a routerLink="/receta/{{receta?.identificador}}">
+  <a [routerLink]="['/receta', receta?.identificador]">
   <img [src]="receta?.imagen" alt="$"/>
       <h1>{{receta?.nombre}}</h1>
       <p>{{receta?.tipo}}</p>

@@ -13,6 +13,8 @@ import { ContactanosComponent } from './components/sobre-nosotros/contactanos.co
 import { FooterComponent } from './layout/footer/footer.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { CartaRecetaComponent } from './components/carta-receta/carta-receta.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServicioRecetasService } from './servicio-recetas.service';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { CartaRecetaComponent } from './components/carta-receta/carta-receta.com
     ContactanosComponent,
     FooterComponent,
     CarruselComponent,
-    CartaRecetaComponent
+    CartaRecetaComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ServicioRecetasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

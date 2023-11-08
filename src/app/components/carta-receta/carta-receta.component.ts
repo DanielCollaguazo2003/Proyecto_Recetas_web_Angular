@@ -8,5 +8,4 @@ import { Receta } from 'src/app/domain/receta';
 })
 export class CartaRecetaComponent {
   @Input() receta?: Receta;
-
 }
