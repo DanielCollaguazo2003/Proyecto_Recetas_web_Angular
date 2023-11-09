@@ -17,8 +17,10 @@
       <textarea id="preparacion" formControlName="preparacion" rows="4" required class="area-preparacion"></textarea>
 
       <label for="imagen">Imagen de la Receta:</label>
-      <input type="file" id="imagen" formControlName="imagen" accept="image/*">
-
+      <input (change)="capturarFile($event)" type="file" id="imagen" formControlName="imagen" accept="image/*">
+      <div *ngIf="previsualizacion">
+        <img width="250px" [src]="previsualizacion" alt="">
+      </div>
   </form>
   <button type="button" (click)="agregarReceta()" class="summit-enviar">Enviar Receta </button>
 </div>

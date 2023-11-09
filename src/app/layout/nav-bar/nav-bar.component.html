@@ -14,10 +14,7 @@
           <a href="#id-about" class="about">Sobre nosotros</a>
           <div class="buscar">
               <div class="research-left-container">
-                  <a href="javascript:void(0);" class="researcher" style="border: none;">
-                      <input type="text" placeholder="Buscar receta">
-                      <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
-                  </a>
+                <input type="text" [formControl]="control" (ngModelChange)="buscar($event)" placeholder="Buscar receta">
               </div>
           </div>
       </div>

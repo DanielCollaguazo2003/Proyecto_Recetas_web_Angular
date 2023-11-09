@@ -1,10 +1,13 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Receta } from './domain/receta';
+import { ElementRef } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioRecetasService {
+   recetasBuscador: Receta[] = [];
+   estaBuscado = false;
    recetasList: Receta[] = [
     {
       identificador: 1,
@@ -68,20 +71,26 @@ export class ServicioRecetasService {
 
   constructor() {
   }
-
   obtenerRecetas() {
+    const seCargo = localStorage.getItem("seCargoRecetas") || null;
+    if (!seCargo || !parseInt(seCargo)) {
+      localStorage.setItem("seCargoRecetas", '1');
+      return this.recetasList;
+    }
+    this.recetasList = JSON.parse(localStorage.getItem("recetas") || '[]')
     return this.recetasList;
   }
 
+
   actualizarRecetas(recetas: Receta[]) {
-    console.log(this.recetasList);
     localStorage.setItem('recetas', JSON.stringify(recetas));
     this.recetasList = recetas
-  }
+    }
 
   agregarReceta(receta: Receta) {
-    this.recetasList.push(receta)
-    console.log(this.recetasList.length);
+    this.estaBuscado
+    if(!this.estaBuscado) this.recetasBuscador.push(receta);
+    this.recetasList.push(receta);
     this.actualizarRecetas(this.recetasList)
   }
 
@@ -91,6 +100,36 @@ export class ServicioRecetasService {
     if (!receta) return null
 
     return receta
+  }
+
+  obtenerRecetasPorNombre(nombre: string) {
+
+    if(!this.recetasList.length) this.obtenerRecetas();
+
+    if(!nombre.length) {
+      this.estaBuscado = false;
+      this.recetasBuscador.splice(0, this.recetasBuscador.length);
+      this.recetasBuscador.push(...this.recetasList);
+      return  this.recetasBuscador;
+    }
+
+   nombre = nombre.toLocaleLowerCase();
+
+   const recetas = this.recetasList.filter(receta => receta.nombre?.toLowerCase().indexOf(nombre) != undefined  && receta.nombre?.toLowerCase().indexOf(nombre) >= 0);
+
+    if (recetas && recetas.length) {
+      this.estaBuscado = true;
+      this.recetasBuscador.splice(0, this.recetasBuscador.length);
+      this.recetasBuscador.push(...recetas);
+    } else {
+        this.estaBuscado = true;
+        this.recetasBuscador.splice(0, this.recetasBuscador.length);
+    }
+    return  this.recetasBuscador;
+  }
+
+  obtenerTamanioReceta(){
+    return this.recetasList.length;
   }
 
 }

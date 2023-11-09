@@ -17,14 +17,11 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const seCargo = localStorage.getItem("seCargoRecetas") || null;
-    if (!seCargo || !parseInt(seCargo)) {
-      localStorage.setItem("seCargoRecetas", '1');
-      this._recetaService.actualizarRecetas(this.recetasCarga);
-    }
+    this._recetaService.actualizarRecetas(this.recetasCarga);
   }
 
   get recetas(): Receta[] {
+    this.recetasCarga = this._recetaService.obtenerRecetas();
     return this.recetasCarga;
   }
 

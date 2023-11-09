@@ -5,7 +5,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { VistaRecetaComponent } from './pages/vista-receta/vista-receta.component';
 
 const routes: Routes = [
-  {path: "home", component: InicioComponent},
+  {path: "home", component: InicioComponent },
   {path: "receta/:identificador", component: VistaRecetaComponent},
   {path: "**", redirectTo: 'home'}
 ];
